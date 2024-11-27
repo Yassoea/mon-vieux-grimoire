@@ -10,6 +10,7 @@ const bookRoutes = require('./routes/book');
 const {limiter} = require("./middleware/rate-limiter");
 const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
+const { string } = require('prop-types');
 
 const app = express();
 
@@ -18,13 +19,18 @@ const dbUserName = process.env.DB_USER_NAME;
 const dbPassword = process.env.DB_PASSWORD;
 
 
-mongoose.connect(`mongodb+srv://${dbUserName}:${dbPassword}@${dbServer}/${process.env.DB_NAME}?retryWrites=true&w=majority&appName=MonVieuxGrimoire`)
+mongoose.connect(`mongodb+srv://${dbUserName}:${dbPassword}@${dbServer}/${process.env.DB_NAME}?retryWrites=true&w=majority&appName=MonVieuxGrimoire`,
+    { useNewUrlParser: true,
+    useUnifiedTopology: true }
+)
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch((error) => console.log('Connexion à MongoDB échouée !', error.message));
 
 
 
 app.use(helmet({ crossOriginResourcePolicy: false }));
+
+
 
 app.use((req, res, next) => {
    res.setHeader('Access-Control-Allow-Origin', '*');
