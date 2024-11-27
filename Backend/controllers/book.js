@@ -23,6 +23,7 @@ exports.getBestRatedBooks = (req, res, next) => {
 }
 
 exports.addBook = (req, res, next) => {
+    console.log('Requête reçue:', req.body); // Ajout du log
     const bookObject = JSON.parse(req.body.book);
     const book = new Book({
         ...bookObject,
@@ -30,7 +31,10 @@ exports.addBook = (req, res, next) => {
     });
     book.save()
         .then(() => res.status(201).json({ message: 'Objet enregistré !'}))
-        .catch(error => res.status(400).json({error}));
+        .catch((error) => {
+            console.error('Erreur lors de l\'enregistrement du livre:', error); // Ajout du log
+            res.status(400).json({ error });
+        });
 }
 
 exports.updateBook = (req, res, next) => {

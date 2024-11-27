@@ -23,7 +23,8 @@ mongoose.connect(`mongodb+srv://${dbUserName}:${dbPassword}@${dbServer}/${proces
     { useNewUrlParser: true,
     useUnifiedTopology: true }
 )
-    .then(() => console.log('Connexion à MongoDB réussie !'))
+    .then(() => console.log('Connexion à MongoDB réussie !')) 
+    
     .catch((error) => console.log('Connexion à MongoDB échouée !', error.message));
 
 

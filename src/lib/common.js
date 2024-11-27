@@ -115,6 +115,8 @@ export async function rateBook(id, userId, rating) {
 
 export async function addBook(data) {
   const userId = localStorage.getItem('userId');
+  const token = localStorage.getItem('token'); // Ajout du log
+  console.log('Token envoyé :', token); // Ajout du log
   const book = {
     userId,
     title: data.title,
@@ -133,11 +135,11 @@ export async function addBook(data) {
 
   try {
     return await axios({
-      method: 'post',
+      method: 'POST',
       url: `${API_ROUTES.BOOKS}`,
       data: bodyFormData,
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${token}`,
       },
     });
   } catch (err) {
