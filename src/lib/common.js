@@ -116,7 +116,7 @@ export async function rateBook(id, userId, rating) {
 export async function addBook(data) {
   const userId = localStorage.getItem('userId');
   const token = localStorage.getItem('token'); // Ajout du log
-  console.log('Token envoyé :', token); // Ajout du log
+
   const book = {
     userId,
     title: data.title,
