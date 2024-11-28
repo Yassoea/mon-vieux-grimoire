@@ -44,7 +44,7 @@ Assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
 1. **Cloner le dépôt GitHub** :
    ```bash
-   git clone https://github.com/<ton-utilisateur-github>/mon-vieux-grimoire.git
+   git clone https://github.com/Yassoea/mon-vieux-grimoire.git
    cd mon-vieux-grimoire
 2. **Installer les dépendances du backend :**
    ```bash
