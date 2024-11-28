@@ -87,5 +87,23 @@ Ouvrez le fichier .env et remplacez les informations par celles correspondant à
 3. **Accéder à l'application :**
    - Une fois les deux serveurs lancés, ouvrez votre navigateur et accédez à l'application en visitant l'URL suivante :
      [http://localhost:3000](http://localhost:3000).
+## Scripts disponibles
+
+### Backend
+- **`npm start`** : Démarrer le serveur backend.
+- **`npm run dev`** : Démarrer le serveur backend en mode développement avec rechargement automatique (si configuré).
+
+### Frontend
+- **`npm start`** : Démarrer l'application frontend en mode développement.
+
+## Auteurs
+- **Yassin El Akhal** - Étudiant OpenClassrooms  
+  
+
+## Contributions
+Les contributions ne sont pas acceptées sur ce projet éducatif. Cependant, les suggestions sont les bienvenues via des issues sur le dépôt GitHub.
+
+## Licence
+Ce projet est développé dans un cadre éducatif et n'est pas destiné à un usage commercial.
 
 
